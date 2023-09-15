@@ -3,6 +3,7 @@ import { HiOutlineUsers } from 'react-icons/hi2';
 import { CgFileDocument } from 'react-icons/cg';
 import { BsShop } from 'react-icons/bs';
 import {useNavigate} from 'react-router-dom';
+import { Tabel } from './tabel';
 
 export const Dashboard = () => {
     const navigate = useNavigate()
@@ -69,6 +70,7 @@ export const Dashboard = () => {
                       
                     </div>
                 </div>
+                <Tabel/>
             </div>
         </div>
     )
