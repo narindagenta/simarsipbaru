@@ -203,7 +203,7 @@ export const Tambah = () => {
                     <li className="mb-3 row">
                         <label for="scan" class="col-sm-2 col-form-label">File Scan</label>
                         <div class="col-sm-9">
-                            <input type="file" className="form-control" id="scan" placeholder="Pilih File"/>
+                            <input type="file" className="form-control" id="scan" placeholder="Pilih File" accept=".pdf"/>
                         </div>
                     </li>
                     </ul>

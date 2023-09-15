@@ -28,7 +28,7 @@ export const Login = () => {
         localStorage.setItem('user_id', response.data.user_id)
         localStorage.setItem('username', response.data.username)
         
-        navigate('/dasboardh')
+        navigate('/dasboard')
 
       }
     }).catch(function(error){console.log(error)})*/
