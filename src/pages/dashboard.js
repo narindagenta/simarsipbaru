@@ -22,10 +22,10 @@ export const Dashboard = () => {
     return(
         <div className="container-fluid">
             <div className="row d-flex  justify-content-center align-items-center mt-5">
-                <div class="col-md-2 col-2 card bg-light border-dark m-3 " onClick={handleJumlah}>
-                    <div class="card-body row d-flex  justify-content-center align-items-center">
+                <div class="col-md-2 col-2 card border-dark m-3 " onClick={handleJumlah}>
+                    <div class="card-body row d-flex  justify-content-center align-items-center text-center">
                         <div className='col-md-3 col-3'>
-                            <CgFileDocument className='text-dark fs-1 '/>
+                            <CgFileDocument className=' fs-1 '/>
                         </div>
                         <div className='col-md-9 col-3 justify-content-center align-items-center '>
                             <p class="fs-6 d-none d-md-block ">Jumlah Arsip</p>
@@ -34,22 +34,22 @@ export const Dashboard = () => {
                       
                     </div>
                 </div>
-                <div class="col-md-2 col-2 card bg-light border-dark m-3 " onClick={handleJumlah}>
-                    <div class="card-body row d-flex  justify-content-center align-items-center">
+                <div class="col-md-2 col-2 card border-dark m-3 " onClick={handleJumlah}>
+                    <div class="card-body row d-flex  justify-content-center align-items-center text-center ">
                         <div className='col-md-3 col-3'>
-                            <BsShop className='text-dark fs-1 '/>
+                            <BsShop className='fs-1 '/>
                         </div>
-                        <div className='col-md-9 col-3 justify-content-center align-items-center'>
+                        <div className='col-md-9 col-3 justify-content-center align-items-center '>
                             <p class="fs-6 d-none d-md-block ">Arsip Baru</p>
                             <h3 class="d-none d-md-block fs-4">120</h3>
                         </div>
                       
                     </div>
                 </div>
-                <div class="col-md-2 col-2 card bg-light border-dark m-3" onClick={handleUsers}>
-                    <div class="card-body row d-flex  justify-content-center align-items-center">
+                <div class="col-md-2 col-2 card border-dark m-3" onClick={handleUsers}>
+                    <div class="card-body row d-flex  justify-content-center align-items-center text-center ">
                         <div className='col-md-3 col-3'>
-                            <HiOutlineUsers className='text-dark fs-1 '/>
+                            <HiOutlineUsers className='fs-1 '/>
                         </div>
                         <div className='col-md-9 col-3 justify-content-center align-items-center'>
                             <p class="fs-6 d-none d-md-block ">Pengguna</p>
@@ -58,10 +58,10 @@ export const Dashboard = () => {
                       
                     </div>
                 </div>
-                <div class="col-md-2 col-2 card bg-light border-dark m-3" onClick={handleCategory}>
-                    <div class="card-body row d-flex  justify-content-center align-items-center ">
+                <div class="col-md-2 col-2 card  border-dark m-3" onClick={handleCategory}>
+                    <div class="card-body row d-flex  justify-content-center align-items-center text-center ">
                         <div className='col-md-3 col-3 '>
-                            <TbListTree className='text-dark fs-1'/>
+                            <TbListTree className='fs-1'/>
                         </div>
                         <div className='col-md-9 col-3 justify-content-center align-items-center'>
                             <p class="fs-6 d-none d-md-block ">Kategori</p>

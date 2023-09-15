@@ -45,8 +45,8 @@ export const Login = () => {
         <div className="logo d-flex justify-content-center align-items-center">
                 <img src={brand} alt="logo-depan" className="brand w-50" />
             </div>
-        <div class="card log text-white mt-3 w-80">
-          <div class="card-body p-4 text-center rounded-5">
+        <div class="cards log text-white mt-3 w-80">
+          <div class="cards-body p-4 text-center rounded-5">
 
             <form onSubmit={handleSubmit}>
               <div class="form-outline form-white mb-4 mt-4">

@@ -8,7 +8,7 @@ function Layout() {
 <Header />
   <body className="content">
       <div className="row">
-        <div className="col-md-2 col-2">
+        <div className="col-md-2 col-2 align-items-center justify-content-center">
           <Bar/>
         </div>
         <div className="col-md-10 col-10">
