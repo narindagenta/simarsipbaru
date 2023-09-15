@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+.back{
+  background-image: url(./images/bg2.png) !important;
+}
+.log{
+  background-color: rgba(246, 246, 246, 0.65);
+}
+.menu{
+  font-size: large;
+}
+.icon{
+  width: 75px;
+}
+.tulis{
+  font-size: 20px;
+}
+.headerlogo{
+  background-color: #2145AD;
+}
+.sidebar{
+  background-color: #2145AD;
+  height: 100vh;
+}
+.sidebar li a{
+  list-style: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: var(--tran-03);
+}
+.sidebar li a:hover{
+  background-color: white;
+  color: #E65F2B;
+  border-radius: 24px;
+}
+.nav-link.act{
+  background-color: white;
+  color: #E65F2B;
+  border-radius: 24px;
+}
+
+
+
+.content{
+  background-color: #E3EAFC;
+}
