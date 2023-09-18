@@ -1,40 +1,52 @@
 import { Viewer, Worker } from "@react-pdf-viewer/core";
-import { defaultLayoutPlugin, DefaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import '@react-pdf-viewer/core/lib/styles/index.css'
-import '@react-pdf-viewer/default-layout/lib/styles/index.css'
-import * as React from "react"
-import { useEffect } from 'react';
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import * as React from "react";
+import { useEffect, useState } from "react";
 
 export const Tambah = () => {
+  const [viewPdf, setViewPdf] = useState(null);
+  const [catalogValue, setCatalogValue] = useState("");
+  const [serialNumberValue, setSerialNumberValue] = useState("");
+  const newplugin = defaultLayoutPlugin();
 
-
-    const [viewPdf, setViewPdf] = React.useState(null)
-    const newplugin = defaultLayoutPlugin()
-
-    const handleChangePdf = (e) => {
-       document.getElementById("pdf-viewer").classList.remove("d-none")
-        let selectedFile = e.target.files[0]
-        console.log(selectedFile.size)
-        if (selectedFile) {
-            if (selectedFile) {
-                let reader = new FileReader()
-                reader.readAsDataURL(selectedFile)
-                reader.onload = (e) => {
-                    setViewPdf(e.target.result)
-                }
-            }
-            else {
-                setViewPdf(null)
-            }
-        }
-        else {
-            console.log("Select File")
-        }
+  const handleChangePdf = (e) => {
+    document.getElementById("pdf-viewer").classList.remove("d-none");
+    let selectedFile = e.target.files[0];
+    console.log(selectedFile.size);
+    if (selectedFile) {
+      let reader = new FileReader();
+      reader.readAsDataURL(selectedFile);
+      reader.onload = (e) => {
+        setViewPdf(e.target.result);
+      };
+    } else {
+      setViewPdf(null);
     }
-    useEffect(()=>{
-        document.getElementById('tambah').classList.add('act')
-        document.getElementById('tambah').classList.remove('text-white')
-    },[])
+  };
+
+  useEffect(() => {
+    document.getElementById("tambah").classList.add("act");
+    document.getElementById("tambah").classList.remove("text-white");
+  }, []);
+
+  useEffect(() => {
+    generateArchiveCode();
+  }, [catalogValue, serialNumberValue]);
+
+  function generateArchiveCode() {
+    // Combine catalog and book numbers to generate the archive code
+    const archiveCode = `${catalogValue}/${serialNumberValue}`;
+    // Display the archive code in the span element if it exists
+    const archiveCodeElement = document.getElementById("archive_code");
+    if (archiveCodeElement) {
+      archiveCodeElement.textContent = `: ${archiveCode}`;
+      console.log("Archive Code:", archiveCode);
+   
+    }
+  }
+
 
     return(
         <div className="container-fluid">
@@ -43,9 +55,18 @@ export const Tambah = () => {
                 <form>
                     <ul>
                     <li className="mb-3 row">
+                        <label for="archive_code" class="col-sm-2 col-form-label">Kode Arsip</label>
+                        <div class="col-sm-9 m-2">
+                            <span id="archive_code">: </span>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
                         <label for="catalog" class="col-sm-2 col-form-label">Indek Katalog</label>
                         <div class="col-sm-9">
-                            <select id="catalog" class="form-select" aria-label="Default select example">
+                            <select id="catalog"
+                                    className="form-select"
+                                    aria-label="Default select example"
+                                    onChange={(e) => setCatalogValue(e.target.value)}>
                               <option selected>Pilih no indeks katalog</option>
                               <option value="1">1. Doktrin</option>
                               <option value="2">2. Organisasi dan Prosedur</option>
@@ -84,7 +105,11 @@ export const Tambah = () => {
                     <li className="mb-3 row">
                         <label for="serial_number" class="col-sm-2 col-form-label">No Buku</label>
                         <div class="col-sm-3 me-5">
-                            <input type="text" className="form-control" id="serial_number" placeholder="masukkan no buku"/>
+                            <input type="text"
+                                    className="form-control"
+                                    id="serial_number"
+                                    placeholder="masukkan no buku"
+                                    onInput={(e) => setSerialNumberValue(e.target.value)}/>
                         </div>
                         <label for="file_number" class="col-sm-2 col-form-label ms-4">No Berkas</label>
                         <div class="col-sm-3">
