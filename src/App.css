@@ -60,7 +60,6 @@
 }
 .sidebar li a{
   list-style: none;
-  color: white;
   display: flex;
   align-items: center;
   border-radius: 6px;
@@ -68,11 +67,10 @@
   transition: var(--tran-03);
 }
 .sidebar li a:hover{
-  background-color: white;
-  color: #E65F2B;
-  border-radius: 24px;
+  background-color: rgb(83, 104, 177);
+  color: white;
 }
-.nav-link.act{
+.act{
   background-color: white;
   color: #E65F2B;
   border-radius: 24px;

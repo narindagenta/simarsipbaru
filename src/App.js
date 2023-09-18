@@ -8,6 +8,7 @@ import { Tabel } from './pages/tabel';
 import { User } from './pages/user';
 import Layout from './component/layout';
 import { Category } from './pages/category';
+import { Detail } from './pages/detail';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Login/>}/>
           <Route path='/dashboard' element={<Layout/>}>
             <Route index element={<Dashboard/>} />
+            <Route path='/dashboard/detail' element={<Detail/>}/>
           </Route>
           <Route path='/tambah' element={<Layout/>}>
             <Route index element={<Tambah/>} />

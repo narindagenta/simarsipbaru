@@ -1,4 +1,10 @@
+import {useNavigate} from 'react-router-dom';
+
 export const Tabel = () => {
+  const navigate = useNavigate()
+  function handleDetail() {
+    navigate('/dashboard/detail')
+  }
 
     return(
         <div className="container-fluid">
@@ -15,7 +21,7 @@ export const Tabel = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr onClick={handleDetail} >
                           <th scope="row">15/09/2023</th>
                           <td>buku</td>
                           <td>Doktrin</td>

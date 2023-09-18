@@ -4,6 +4,7 @@ import { CgFileDocument } from 'react-icons/cg';
 import { BsShop } from 'react-icons/bs';
 import {useNavigate} from 'react-router-dom';
 import { Tabel } from './tabel';
+import { useEffect } from 'react';
 
 export const Dashboard = () => {
     const navigate = useNavigate()
@@ -19,10 +20,16 @@ export const Dashboard = () => {
         navigate('/category')
       }
 
+      useEffect(()=>{
+        document.getElementById('dash').classList.add('act')
+        document.getElementById('dash').classList.remove('text-white')
+    },[])
+
+
     return(
         <div className="container-fluid">
             <div className="row d-flex  justify-content-center align-items-center mt-5">
-                <div class="col-md-2 col-2 card border-dark m-3 " onClick={handleJumlah}>
+                <div class="col-md-2 col-2 card  m-3 " onClick={handleJumlah}>
                     <div class="card-body row d-flex  justify-content-center align-items-center text-center">
                         <div className='col-md-3 col-3'>
                             <CgFileDocument className=' fs-1 '/>
@@ -34,7 +41,7 @@ export const Dashboard = () => {
                       
                     </div>
                 </div>
-                <div class="col-md-2 col-2 card border-dark m-3 " onClick={handleJumlah}>
+                <div class="col-md-2 col-2 card  m-3 " onClick={handleJumlah}>
                     <div class="card-body row d-flex  justify-content-center align-items-center text-center ">
                         <div className='col-md-3 col-3'>
                             <BsShop className='fs-1 '/>
@@ -46,7 +53,7 @@ export const Dashboard = () => {
                       
                     </div>
                 </div>
-                <div class="col-md-2 col-2 card border-dark m-3" onClick={handleUsers}>
+                <div class="col-md-2 col-2 card b m-3" onClick={handleUsers}>
                     <div class="card-body row d-flex  justify-content-center align-items-center text-center ">
                         <div className='col-md-3 col-3'>
                             <HiOutlineUsers className='fs-1 '/>
@@ -58,7 +65,7 @@ export const Dashboard = () => {
                       
                     </div>
                 </div>
-                <div class="col-md-2 col-2 card  border-dark m-3" onClick={handleCategory}>
+                <div class="col-md-2 col-2 card  m-3" onClick={handleCategory}>
                     <div class="card-body row d-flex  justify-content-center align-items-center text-center ">
                         <div className='col-md-3 col-3 '>
                             <TbListTree className='fs-1'/>

@@ -1,5 +1,40 @@
+import { Viewer, Worker } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin, DefaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import '@react-pdf-viewer/core/lib/styles/index.css'
+import '@react-pdf-viewer/default-layout/lib/styles/index.css'
+import * as React from "react"
+import { useEffect } from 'react';
 
 export const Tambah = () => {
+
+
+    const [viewPdf, setViewPdf] = React.useState(null)
+    const newplugin = defaultLayoutPlugin()
+
+    const handleChangePdf = (e) => {
+        document.getElementById("pdf-viewer").classList.remove("d-none")
+        let selectedFile = e.target.files[0]
+        console.log(selectedFile.size)
+        if (selectedFile) {
+            if (selectedFile) {
+                let reader = new FileReader()
+                reader.readAsDataURL(selectedFile)
+                reader.onload = (e) => {
+                    setViewPdf(e.target.result)
+                }
+            }
+            else {
+                setViewPdf(null)
+            }
+        }
+        else {
+            console.log("Select File")
+        }
+    }
+    useEffect(()=>{
+        document.getElementById('tambah').classList.add('act')
+        document.getElementById('tambah').classList.remove('text-white')
+    },[])
 
     return(
         <div className="container-fluid">
@@ -203,8 +238,19 @@ export const Tambah = () => {
                     <li className="mb-3 row">
                         <label for="scan" class="col-sm-2 col-form-label">File Scan</label>
                         <div class="col-sm-9">
-                            <input type="file" className="form-control" id="scan" placeholder="Pilih File" accept=".pdf"/>
+                            <input onChange={handleChangePdf} type="file" className="form-control" id="scan" placeholder="Pilih File" accept=".pdf"/>
                         </div>
+                    </li>
+                    <li className="mb-3 row justify-content-center align-items-center">
+                    <div className='pdf-view d-none col-sm-9 ' id='pdf-viewer'>
+                                <Worker workerUrl='https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js' className="overflow-auto">
+                                    {viewPdf && <>
+                                        <Viewer fileUrl={viewPdf} plugins={[newplugin]} />
+                                    </>
+                                    }
+                                    {!viewPdf && <></>}
+                                </Worker>
+                            </div>
                     </li>
                     </ul>
                 </form>
