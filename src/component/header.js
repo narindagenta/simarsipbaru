@@ -27,7 +27,7 @@ export const Header = () => {
                 </div>
                 <div className='row d-flex flex-column align-items-end justify-content-between'>
                     <div className='col-3 pe-5 d-flex align-items-center justify-content-end m-2'>
-                        <input id="search" type="text" placeholder="Search..." className='form-control' />
+                        <input id="search" type="text" placeholder="Cari Arsip" className='form-control' />
                     </div>
                 </div>
             </div>

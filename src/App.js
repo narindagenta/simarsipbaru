@@ -9,6 +9,7 @@ import { User } from './pages/user';
 import Layout from './component/layout';
 import { Category } from './pages/category';
 import { Detail } from './pages/detail';
+import { TambahUser } from './pages/tambahuser';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           </Route>
           <Route path='/user' element={<Layout/>}>
             <Route index element={<User/>} />
+            <Route path='/user/tambahuser' element={<TambahUser/>}/>
           </Route>
           <Route path='/category' element={<Layout/>}>
             <Route index element={<Category/>} />

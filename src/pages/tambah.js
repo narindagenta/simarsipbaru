@@ -12,7 +12,7 @@ export const Tambah = () => {
     const newplugin = defaultLayoutPlugin()
 
     const handleChangePdf = (e) => {
-        document.getElementById("pdf-viewer").classList.remove("d-none")
+       document.getElementById("pdf-viewer").classList.remove("d-none")
         let selectedFile = e.target.files[0]
         console.log(selectedFile.size)
         if (selectedFile) {
@@ -115,7 +115,7 @@ export const Tambah = () => {
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="type" class="col-sm-2 col-form-label">Kondisi Arsip</label>
+                        <label for="type" class="col-sm-2 col-form-label">Jenis Arsip</label>
                         <div class="col-sm-9">
                         <select id="type" class="form-select" aria-label="Default select example">
                           <option selected>Pilih jenis arsip</option>
@@ -130,10 +130,10 @@ export const Tambah = () => {
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="class" class="col-sm-2 col-form-label">Kondisi Arsip</label>
+                        <label for="class" class="col-sm-2 col-form-label">Kelas Arsip</label>
                         <div class="col-sm-9">
                         <select id="class" class="form-select" aria-label="Default select example">
-                          <option selected>Pilih jenis arsip</option>
+                          <option selected>Pilih kelas arsip</option>
                           <option value="1">Biasa</option>
                           <option value="2">Rahasia</option>
                           <option value="3">Sangat Rahasia</option>
@@ -243,9 +243,11 @@ export const Tambah = () => {
                     </li>
                     <li className="mb-3 row justify-content-center align-items-center">
                     <div className='pdf-view d-none col-sm-9 ' id='pdf-viewer'>
-                                <Worker workerUrl='https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js' className="overflow-auto">
+                                <Worker workerUrl='https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js'>
                                     {viewPdf && <>
+                                        <div className="view">
                                         <Viewer fileUrl={viewPdf} plugins={[newplugin]} />
+                                        </div>
                                     </>
                                     }
                                     {!viewPdf && <></>}
@@ -256,7 +258,7 @@ export const Tambah = () => {
                 </form>
             </div>
             <div className="row d-flex flex-column justify-content-between align-items-end">
-                <input class="col-md-1 me-5 mt-2 mb-2 btn btn-primary" type="submit" value="Submit"/>
+                <input class="col-md-1 col-2 me-5 mt-2 mb-2 btn btn-primary" type="submit" value="Submit"/>
             </div>
         </div>
     )

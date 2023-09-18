@@ -83,8 +83,18 @@
   color: white;
   border-color: white;
 }
-
-
 .content{
   background-color: #E3EAFC;
+}
+.view{
+  height: 800px;
+  overflow: auto;
+}
+.profil{
+  height: 150px;
+  width: auto;
+  aspect-ratio: 1/1;
+}
+.loc{
+  color: #A3AED0;
 }
