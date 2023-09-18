@@ -28,7 +28,7 @@ export const Dashboard = () => {
 
     return(
         <div className="container-fluid">
-            <div className="row d-flex  justify-content-center align-items-center mt-5">
+            <div className="row d-flex  justify-content-center align-items-center mt-3">
                 <div class="col-md-2 col-2 card  m-3 " onClick={handleJumlah}>
                     <div class="card-body row d-flex  justify-content-center align-items-center text-center">
                         <div className='col-md-3 col-3'>
