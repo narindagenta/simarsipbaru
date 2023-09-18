@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'react-tooltip/dist/react-tooltip.css';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
@@ -9,7 +8,7 @@ import { Tabel } from './pages/tabel';
 import { User } from './pages/user';
 import Layout from './component/layout';
 import { Category } from './pages/category';
-import { Detail } from './pages/detail';
+import { Detail } from './pages/detailarsip';
 import { TambahUser } from './pages/tambahuser';
 
 
