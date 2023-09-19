@@ -2,13 +2,13 @@ import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import React, { useEffect, useState } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 
 export const Tambah = () => {
   const [viewPdf, setViewPdf] = useState(null);
   const [catalogValue, setCatalogValue] = useState("");
   const [serialNumberValue, setSerialNumberValue] = useState("");
-  const [file_numberValue, setFileNumberValue] = useState(""); // Fixed typo here
   const newplugin = defaultLayoutPlugin();
 
   const handleChangePdf = (e) => {
@@ -33,114 +33,97 @@ export const Tambah = () => {
 
   useEffect(() => {
     generateArchiveCode();
-  }, [catalogValue, serialNumberValue, file_numberValue]);
+  }, [catalogValue, serialNumberValue]);
 
   function generateArchiveCode() {
-    // Check if either serialNumberValue or file_numberValue is filled, but not both
-    if (serialNumberValue && file_numberValue) {
-      alert("You can't fill both serial number and file number.");
-      setSerialNumberValue(""); // Clear serialNumberValue
-      setFileNumberValue(""); // Clear file_numberValue
-    } else {
-      // Combine catalog and book numbers to generate the archive code
-      const archiveCode = `${catalogValue}/${serialNumberValue || file_numberValue}`;
-
-      // Display the archive code in the span element if it exists
-      const archiveCodeElement = document.getElementById("archive_code");
-      if (archiveCodeElement) {
-        archiveCodeElement.textContent = `: ${archiveCode}`;
-        console.log("Archive Code:", archiveCode);
-      }
+    // Combine catalog and book numbers to generate the archive code
+    const archiveCode = `${catalogValue}/${serialNumberValue}`;
+    // Display the archive code in the span element if it exists
+    const archiveCodeElement = document.getElementById("archive_code");
+    if (archiveCodeElement) {
+      archiveCodeElement.textContent = `${archiveCode}`;
+      console.log("Archive Code:", archiveCode);
+   
     }
   }
 
-  return (
-    <div className="container-fluid">
-      <div className="row bg-white m-3 rounded p-3 ">
-        <h3>A. Identitas</h3>
-        <form>
-          <ul>
-            <li className="mb-3 row">
-              <label for="archive_code" class="col-sm-2 col-form-label">Kode Arsip</label>
-              <div class="col-sm-9 m-2">
-                <span id="archive_code">: </span>
-              </div>
-            </li>
-            <li className="mb-3 row">
-              <label for="catalog" class="col-sm-2 col-form-label">Indek Katalog</label>
-              <div class="col-sm-9">
-                <select
-                  id="catalog"
-                  className="form-select"
-                  aria-label="Default select example"
-                  onChange={(e) => setCatalogValue(e.target.value)}>
-                     <option selected>Pilih no indeks katalog</option>
-                     <option value="1">1. Doktrin</option>
-                     <option value="2">2. Organisasi dan Prosedur</option>
-                     <option value="3">3. Perencanaan </option>
-                     <option value="4">4. Sistem</option>
-                     <option value="5">5. Inspeksi dan Pengawasan </option>
-                     <option value="6">6. Intelejen dan Pengamanan</option>
-                     <option value="7">7. Operasi Militer</option>
-                     <option value="8">8. Personel SPRIN</option>
-                     <option value="9">9. Materiil dan Logistik</option>
-                     <option value="10">10. Komunikasi dan Elektronika</option>
-                     <option value="11">11. Teritorial</option>
-                     <option value="12">12. Pendidikan dan Latihan</option>
-                     <option value="13">13. Hukum</option>
-                     <option value="14">14. Penerangan</option>
-                     <option value="15">15. Kesehatan</option>
-                     <option value="16">16. Sejarah</option>
-                     <option value="17">17. Administrasi Umum</option>
-                     <option value="18">18. Keuangan</option>
-                     <option value="19">19. Pembinaan Mental</option>
-                     <option value="20">20. Pembinaan Jasmani</option>
-                     <option value="21">21. Hubungan Internasional</option>
-                     <option value="22">22. Navigasi dan Aeonautika</option>
-                     <option value="23">23. Industri</option>
-                     <option value="24">24. Psikologi</option>
-                     <option value="25">25. Laporan</option>
-                     <option value="26">26. Penelitian dan Pengembangan</option>
-                     <option value="27">27. Survei dan Pemetaan</option>
-                     <option value="28">28. Kumpulan SKEP, KEP KASAU</option>
-                     <option value="29">29. CD/DVD</option>
-                     <option value="30">30. kerjasama</option>
-                     <option value="31">31. Kode Untuk Berkas no 2</option>
-                </select>
-              </div>
-            </li>
-            <li className="mb-3 row">
-              <label for="serial_number" class="col-sm-2 col-form-label">No Buku</label>
-              <div class="col-sm-3 me-5">
-                <input
-                  type="number"
-                  className="form-control"
-                  id="serial_number"
-                  placeholder="masukkan no buku"
-                  value={serialNumberValue}
-                  onChange={(e) => setSerialNumberValue(e.target.value)}
-                />
-              </div>
-              <label for="file_number" class="col-sm-2 col-form-label ms-4">No Berkas</label>
-              <div class="col-sm-3">
-                <input
-                  type="number"
-                  className="form-control"
-                  id="file_number"
-                  placeholder="masukkan no berkas"
-                  value={file_numberValue}
-                  onChange={(e) => setFileNumberValue(e.target.value)}
-                />
-              </div>
+
+    return(
+        <div className="container-fluid">
+            <div className="row bg-white m-3 rounded p-3 ">
+                <h3>A. Identitas</h3>
+                <form className="">
+                    <ul>
+                    <li className="mb-3 row">
+                        <label for="archive_code" class="col-sm-2 col-form-label">Kode Arsip</label>
+                        <div class="col-sm-9 m-2">
+                            <span id="archive_code"></span>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
+                        <label for="catalog" class="col-sm-2 col-form-label">Indek Katalog</label>
+                        <div class="col-sm-9">
+                            <select id="catalog"
+                                    className="form-select"
+                                    aria-label="Default select example"
+                                    onChange={(e) => setCatalogValue(e.target.value)}>
+                              <option selected>Pilih no indeks katalog</option>
+                              <option value="1">1. Doktrin</option>
+                              <option value="2">2. Organisasi dan Prosedur</option>
+                              <option value="3">3. Perencanaan </option>
+                              <option value="4">4. Sistem</option>
+                              <option value="5">5. Inspeksi dan Pengawasan </option>
+                              <option value="6">6. Intelejen dan Pengamanan</option>
+                              <option value="7">7. Operasi Militer</option>
+                              <option value="8">8. Personel SPRIN</option>
+                              <option value="9">9. Materiil dan Logistik</option>
+                              <option value="10">10. Komunikasi dan Elektronika</option>
+                              <option value="11">11. Teritorial</option>
+                              <option value="12">12. Pendidikan dan Latihan</option>
+                              <option value="13">13. Hukum</option>
+                              <option value="14">14. Penerangan</option>
+                              <option value="15">15. Kesehatan</option>
+                              <option value="16">16. Sejarah</option>
+                              <option value="17">17. Administrasi Umum</option>
+                              <option value="18">18. Keuangan</option>
+                              <option value="19">19. Pembinaan Mental</option>
+                              <option value="20">20. Pembinaan Jasmani</option>
+                              <option value="21">21. Hubungan Internasional</option>
+                              <option value="22">22. Navigasi dan Aeonautika</option>
+                              <option value="23">23. Industri</option>
+                              <option value="24">24. Psikologi</option>
+                              <option value="25">25. Laporan</option>
+                              <option value="26">26. Penelitian dan Pengembangan</option>
+                              <option value="27">27. Survei dan Pemetaan</option>
+                              <option value="28">28. Kumpulan SKEP, KEP KASAU</option>
+                              <option value="29">29. CD/DVD</option>
+                              <option value="30">30. kerjasama</option>
+                              <option value="31">31. Kode Untuk Berkas no 2</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
+                        <label for="serial_number" class="col-sm-2 col-form-label">No Buku</label>
+                        <div class="col-sm-3 ">
+                            <input type="number"
+                                    className="form-control"
+                                    id="serial_number"
+                                    placeholder="masukkan no buku"
+                                    onInput={(e) => setSerialNumberValue(e.target.value)}/>
+                        </div>
+                        <label for="file_number" class="col-sm-2 col-form-label ">No Berkas</label>
+                        <div class="col-sm-3">
+                            <input type="text" className="form-control" id="file_number " placeholder="masukkan no berkas"/>
+                        </div>
                     </li>
                     <li className="mb-3 row">
                         <label for="tittle" class="col-sm-2 col-form-label">Judul</label>
                         <div class="col-sm-9">
-                            <input type="text" className="form-control" id="tittle" placeholder="masukkan judul"/>
+                            <input type="text" className="form-control" id="tittle" placeholder="masukkan judul" />
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Terbit</label>
+                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Surat</label>
                         <div class="col-sm-3">
                             <input type="date" className="form-control" id="Release_date" placeholder="masukkan judul"/>
                         </div>
@@ -277,13 +260,20 @@ export const Tambah = () => {
                             <input type="text" className="form-control" id="box" placeholder="Masukkan Box"/>
                         </div>
                     </li>
-                    <li className="mb-3 row">
+                    
+                    
+                    </ul>
+                </form>
+                <div>
+                <form>
+                <ul>
+                <li className="mb-3 row">
                         <label for="scan" class="col-sm-2 col-form-label">File Scan</label>
                         <div class="col-sm-9">
                             <input onChange={handleChangePdf} type="file" className="form-control" id="scan" placeholder="Pilih File" accept=".pdf"/>
                         </div>
                     </li>
-                    <li className="mb-3 row justify-content-center align-items-center">
+                <li className="mb-3 row justify-content-center align-items-center">
                     <div className='pdf-view d-none col-sm-9 ' id='pdf-viewer'>
                                 <Worker workerUrl='https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js'>
                                     {viewPdf && <>
@@ -296,11 +286,13 @@ export const Tambah = () => {
                                 </Worker>
                             </div>
                     </li>
-                    </ul>
+                </ul>
                 </form>
             </div>
+            </div>
+            
             <div className="row d-flex flex-column justify-content-between align-items-end">
-                <input class="col-md-1 col-2 me-5 mt-2 mb-2 btn btn-primary" type="submit" value="Submit"/>
+                <input class="col-md-1 col-3 me-5 mt-2 mb-2 btn btn-primary" type="submit" value="Submit"/>
             </div>
         </div>
     )

@@ -38,29 +38,30 @@ export const User = () => {
     return(
         <div className="container-fluid">
             <div className="row justify-content-between align-item-center m-2">
-                <div className='bg-white m-2 rounded p-3 col-8 col-md-8 justify-content-start '>
-                    <h3>Manajemen User</h3>
+                <div className='bg-white m-2 rounded p-3 col-12 col-md-8 justify-content-start '>
+                    <h3 className='p-2'>Manajemen User</h3>
+                    <div className='table-responsive'>
                     <table class="table table-hover text-center">
                     <thead>
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">Username</th>
-                          <th scope="col" className='d-none d-md-block'>Password</th>
+                          <th scope="col" >Password</th>
                           <th scope="col" >Role</th>
                           <th scope="col" >Satker</th>
-                          <th scope='col' className='d-none d-md-block'>Action</th>
+                          <th scope='col' >Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td >1</td>
                           <td>Anjani</td>
-                          <td className='d-none d-md-block'>
+                          <td >
                             <BiShow/>
                           </td>
                           <td>Admin</td>
                           <td>disinfolahtaau</td>
-                          <td className='d-none d-md-block'>
+                          <td >
                             <FaEdit className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Edit User"  />
                             <MdOutlineDeleteOutline className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Delete User" onClick={handleEditClick} />
                             {showModal && (
@@ -97,8 +98,9 @@ export const User = () => {
                         </tr>
                       </tbody>
                 </table>
+                      </div>
                 </div>
-                <div className='col-md-3 col-3 p-2 justify-content-end'>
+                <div className='col-md-3 col-12 p-2 justify-content-end'>
                     <div className='row bg-white m-3 rounded p-3 justify-content-center'>
                         <img src={coba} className="rounded-circle profil object-fit-cover" />
                         <span className='text-dark text-center d-none d-md-block'>DISINFOLAHTAAU</span>
@@ -110,7 +112,7 @@ export const User = () => {
                     <div className='row bg-white m-3 rounded p-3 '>
                         <button className='btn btn-success p-2 d-flex align-items-center justify-content-center' onClick={handleTambah}>
                             <BsPlusSquare className='m-2'/>
-                            <span className='d-none d-md-block'>Tambah User</span>
+                            <span className=''>Tambah User</span>
                         </button>
                     </div>
                 </div>

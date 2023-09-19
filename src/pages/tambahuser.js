@@ -44,8 +44,8 @@ export const TambahUser = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row bg-white m-3 rounded p-3 ">
-        <h3>Tambah User</h3>
+      <div className="row bg-white m-3 rounded p-4 ">
+        <h3 className='mb-3'>Tambah User</h3>
         <ul>
           <li className="mb-3 row">
             <label htmlFor="username" className="col-sm-2 col-form-label">
