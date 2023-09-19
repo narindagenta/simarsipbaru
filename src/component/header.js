@@ -1,7 +1,7 @@
 
 import Icon from '../images/logopolos.png';
-import {RxLayers, RxDashboard} from "react-icons/rx";
-import {ImSearch} from "react-icons/im";
+// import {RxLayers, RxDashboard} from "react-icons/rx";
+// import {ImSearch} from "react-icons/im";
 import {CgProfile} from 'react-icons/cg'
 
 export const Header = () => {

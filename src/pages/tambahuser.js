@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BiHide, BiShow } from 'react-icons/bi';
 import validator from 'validator';
 
 export const TambahUser = () => {
@@ -100,7 +101,7 @@ export const TambahUser = () => {
             <div className="col-sm-9">
               <div className="d-flex justify-content-start align-items-center">
                 <input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? <BiShow/> : <BiHide/>}
                   className="form-control"
                   id="password"
                   placeholder="Masukkan Password"
@@ -116,13 +117,13 @@ export const TambahUser = () => {
                     cursor: 'pointer',
                     fontWeight: 'normal',
                     fontSize: '10px',
-                    color: 'blue',
+                    color: 'black',
                     marginLeft: '10px',
                     display: 'inline-block',
                     marginTop: '5px',
                   }}
                 >
-                  {showPassword ? 'Sembunyikan' : 'Lihat'} Password
+                  {showPassword ? <BiShow className='fs-5'/> : <BiHide className='fs-5'/>}
                 </span>
               </div>
               <span
@@ -146,7 +147,7 @@ export const TambahUser = () => {
             <div className="col-sm-9">
               <div className="d-flex justify-content-start align-items-center">
                 <input
-                  type={showConfirmPassword ? 'text' : 'password'}
+                  type={showConfirmPassword ? <BiShow/> : <BiHide/>}
                   className="form-control"
                   id="confirmPassword"
                   style={{ width: '200px' }}
@@ -162,13 +163,13 @@ export const TambahUser = () => {
                     cursor: 'pointer',
                     fontWeight: 'normal',
                     fontSize: '10px',
-                    color: 'blue',
+                    color: 'black',
                     marginLeft: '10px',
                     display: 'inline-block',
                     marginTop: '5px',
                   }}
                 >
-                  {showConfirmPassword ? 'Sembunyikan' : 'Lihat'} Password
+                  {showConfirmPassword ? <BiShow className='fs-5'/> : <BiHide className='fs-5'/>}
                 </span>
               </div>
               <span

@@ -9,8 +9,8 @@ export const Tabel = () => {
     return(
         <div className="container-fluid">
             <div className="row bg-white m-3 rounded p-3 ">
-                <h1>Arsip</h1>
-                <table class="table table-hover">
+                <h1 className='p-2'>Arsip</h1>
+                <table class="table table-hover text-center">
                     <thead>
                         <tr>
                           <th scope="col">Tanggal Terbit</th>

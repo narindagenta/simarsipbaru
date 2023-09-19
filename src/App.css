@@ -98,3 +98,11 @@
 .loc{
   color: #A3AED0;
 }
+.modal-content{
+  background-color: whitesmoke;
+  border-color: black;
+  border-width: 2px;
+}
+.logopop{
+  width: 50px;
+}
