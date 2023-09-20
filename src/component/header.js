@@ -1,8 +1,24 @@
 import React from 'react';
 import { ImSearch } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
+import {IoChevronBackCircleSharp} from 'react-icons/io5';
+
 
 export const Header = () => {
+  
+  const goback = () => {
+    const currentPath = window.location.pathname;
+
+    // window.history.back();
+    if (currentPath === '/login') {
+      // Jika pengguna berada di halaman awal, arahkan mereka ke halaman lain (misalnya, '/dashboard').
+      window.location.href = '/dashboard'; // Gantilah '/dashboard' dengan rute yang sesuai.
+    } else {
+      // Jika pengguna tidak berada di halaman awal, gunakan window.history.back() sekali saja.
+      window.history.back();
+      
+    }
+  }
   return (
     <header className="">
       <div className="row">
@@ -23,7 +39,11 @@ export const Header = () => {
               </a>
             </div>
           </div>
-          <div className="row d-flex flex-column bg-white align-items-end justify-content-between">
+          <div className="row d-flex flex-row bg-white align-items-center justify-content-between">
+            <div className='col-md-2 col-2 d-flex align-items-center justify-content-start' onClick={goback}>
+              <IoChevronBackCircleSharp className='fs-4 col-12 col-md-2'/>
+              <span className='p-2 d-none d-md-block'>Kembali</span>
+            </div>
             <div className="col-8 col-md-4 pe-3 d-flex align-items-center justify-content-end p-2">
               <div className="input-group">
                 <input

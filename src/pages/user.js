@@ -16,7 +16,7 @@ export const User = () => {
     const handleTambah = async (event) => {
         navigate('/user/tambahuser')
     }
-    const handleEditClick = () => {
+    const handleHapusClick = () => {
         // Show the modal when the edit icon is clicked
         setShowModal(true);
       };
@@ -37,10 +37,18 @@ export const User = () => {
 
     return(
         <div className="container-fluid">
-            <div className="row justify-content-between align-item-center m-2">
-                <div className='bg-white m-2 rounded p-3 col-12 col-md-8 justify-content-start '>
-                    <h3 className='p-2'>Manajemen User</h3>
-                    <div className='table-responsive'>
+    
+            <div className="row justify-content-center align-items-center m-2">
+              <div className='bg-white m-2 rounded p-3 col-12 col-md-12 '>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h3 className="m-0">Manajemen User</h3>
+                  <button className="btn btn-success d-flex align-items-center">
+                    <BsPlusSquare className="m-2" />
+                    <span className="d-none d-md-inline">Tambah User</span>
+                  </button>
+
+                </div>
+                    <div className='table-responsive mt-3'>
                     <table class="table table-hover text-center">
                     <thead>
                         <tr>
@@ -63,7 +71,7 @@ export const User = () => {
                           <td>disinfolahtaau</td>
                           <td >
                             <FaEdit className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Edit User"  />
-                            <MdOutlineDeleteOutline className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Delete User" onClick={handleEditClick} />
+                            <MdOutlineDeleteOutline className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Delete User" onClick={handleHapusClick} />
                             {showModal && (
                                 <div className="modal d-block" tabIndex="-1" role="dialog" >
                                   <div className="modal-dialog modal-dialog-centered" role="document">
@@ -100,22 +108,22 @@ export const User = () => {
                 </table>
                       </div>
                 </div>
-                <div className='col-md-3 col-12 p-2 justify-content-end'>
-                    <div className='row bg-white m-3 rounded p-3 justify-content-center'>
+                {/* <div className='col-md-3 col-12 p-2 justify-content-end'>
+                    { <div className='row bg-white m-3 rounded p-3 justify-content-center'>
                         <img src={coba} className="rounded-circle profil object-fit-cover" />
                         <span className='text-dark text-center d-none d-md-block'>DISINFOLAHTAAU</span>
                         <div className='row text-gray justify-content-center text-center align-items-center d-none d-md-block loc'>
                             <IoLocationOutline className='col-3 h-50'/>
                             <span className='col-9 w-50 '>Jakarta</span>
                         </div>
-                    </div>
+                    </div> }
                     <div className='row bg-white m-3 rounded p-3 '>
                         <button className='btn btn-success p-2 d-flex align-items-center justify-content-center' onClick={handleTambah}>
                             <BsPlusSquare className='m-2'/>
                             <span className=''>Tambah User</span>
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>            
         </div>
     )

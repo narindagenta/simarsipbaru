@@ -5,8 +5,8 @@ export const Category = () => {
                 <div className="row bg-white m-3 rounded p-3">
                   <h1>List Kategori</h1>
                   <div className="table-responsive">
-                    <table className="table table-hover">
-                      <thead className="thead-dark">
+                    <table className="table table-hover table-bordered">
+                      <thead class="">
                         <tr>
                           <th>Nama Indeks Kategori</th>
                           <th class="text-center">Jumlah Arsip</th>

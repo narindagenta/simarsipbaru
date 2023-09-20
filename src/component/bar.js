@@ -3,6 +3,7 @@ import { RxLayers, RxDashboard } from "react-icons/rx";
 import { BiLogOut } from "react-icons/bi";
 import { useState } from 'react';
 import { HiOutlineUsers } from 'react-icons/hi';
+
 import Icon from '../images/logopolos.png';
 
 export const Bar = () => {
@@ -25,8 +26,7 @@ export const Bar = () => {
   
 
   return (
-    
-
+  
         <div className="col-2 d-flex  flex-shrink-0  justify-content-center align-items-center w-100 m-0 ">
           <ul class="nav nav-pills flex-column  w-100">
           <li className="nav-item mb-3 col-12 col-md-12 " >
@@ -54,10 +54,17 @@ export const Bar = () => {
                 <span className="col-md-4 d-none d-md-block w-100">Manage User</span>
               </a>
             </li>
-            <li className="nav-item mb-3 col-12 col-md-12 ">
-              <a class="nav-link  text-white" onClick={handleLogClick} data-placement="right" title="Keluar">
-                <BiLogOut className="me-2 col-12 col-md-3 " />
-                <span className="col-md-4 d-none d-md-block w-100">Keluar</span>
+            <li className="nav-item mb-3 col-12 col-md-12">
+  <a
+    className="nav-link text-white"
+    onClick={handleLogClick}
+    data-placement="right"
+    title="Keluar"
+  >
+    <BiLogOut className="me-2 col-12 col-md-3" />
+    <span className="col-md-4 d-none d-md-block w-100">Keluar</span>
+  </a>
+</li>
                 {showModal && (
                   <div className="modal d-block" tabIndex="-1" role="dialog">
                     <div className="modal-dialog modal-dialog-centered" role="document">
@@ -87,11 +94,10 @@ export const Bar = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </a>
-            </li>
-          </ul>
-        </div>
+                )}     
+         </ul>
+         </div>
+          
   );
 }
 export default Bar;
