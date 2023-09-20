@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Icon from '../images/logopolos.png';
 import {FiCheckCircle} from "react-icons/fi"
 
-export const Tambah = () => {
+export const Update = () => {
   const [viewPdf, setViewPdf] = useState(null);
   const [catalogValue, setCatalogValue] = useState("");
   const [serialNumberValue, setSerialNumberValue] = useState("");
@@ -62,7 +62,10 @@ export const Tambah = () => {
 
     return(
         <div className="container-fluid">
+            <div className="row m-3 p-1 rounded bg-dark">  
+            <h1 className="text-white text-center">Update Arsip</h1></div>
             <div className="row bg-white m-3 rounded p-3 ">
+                
                 <h3>A. Identitas</h3>
                 <form className="">
                     <ul>

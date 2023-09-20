@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 export const Tabel = () => {
   const navigate = useNavigate()
   function handleDetail() {
-    navigate('/dashboard/detail')
+    navigate('/tabel/detail')
   }
 
     return(

@@ -32,7 +32,7 @@ export const Bar = () => {
           <li className="nav-item mb-3 col-12 col-md-12 " >
             <a id="ikon"className="nav-link d-flex flex-column align-items-center justify-content-center " aria-current="page">
             <img src={Icon} alt="icon" className="icon p-2 col-12 col-md-3" />
-            <h3 className='fs-3 text-white d-none d-md-block'>SIM ARSIP</h3>
+            <h3 className='fs-3 text-white d-none d-md-block text-center'>SIM ARSIP</h3>
             </a>
           </li>
 

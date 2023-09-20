@@ -30,7 +30,7 @@ export const Dashboard = () => {
   return (
     <div className="container-fluid">
       <div className="row d-flex justify-content-center align-items-center mt-3">
-        <div className="col-md-4 col-lg-2 col-4 card m-3" onClick={handleJumlah}>
+        <div className="col-md-4 col-lg-2 col-3 card m-3" onClick={handleJumlah}>
             <div className="card-body row d-flex justify-content-center align-items-center text-center">
                 <div className="col-md-3 col-12">
                   <CgFileDocument className="fs-1" /> {/* Adjust the fs-4 class to set the desired size */}
@@ -41,7 +41,7 @@ export const Dashboard = () => {
                 </div>
             </div>
         </div>
-        <div className="col-md-4 col-lg-2 col-4 card m-3" onClick={handleJumlah}>
+        <div className="col-md-4 col-lg-2 col-3 card m-3" onClick={handleJumlah}>
           <div className="card-body row d-flex justify-content-center align-items-center text-center">
             <div className="col-md-3 col-12">
               <BsShop className="fs-1" />
@@ -52,7 +52,7 @@ export const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-4 col-lg-2 col-4 card m-3" onClick={handleUsers}>
+        {/* <div className="col-md-4 col-lg-2 col-4 card m-3" onClick={handleUsers}>
           <div className="card-body row d-flex justify-content-center align-items-center text-center">
             <div className="col-md-3 col-12">
               <HiOutlineUsers className="fs-1" />
@@ -62,8 +62,8 @@ export const Dashboard = () => {
               <h3 className="fs-4">120</h3>
             </div>
           </div>
-        </div>
-        <div className="col-md-4 col-lg-2 col-4 card m-3" onClick={handleCategory}>
+        </div> */}
+        <div className="col-md-4 col-lg-2 col-3 card m-3" onClick={handleCategory}>
           <div className="card-body row d-flex justify-content-center align-items-center text-center">
             <div className="col-md-3 col-12">
               <TbListTree className="fs-1" />

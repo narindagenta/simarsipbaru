@@ -4,7 +4,7 @@ import validator from 'validator';
 import Icon from '../images/logopolos.png';
 import {FiCheckCircle} from "react-icons/fi"
 
-export const TambahUser = () => {
+export const UpdateUser = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
@@ -57,6 +57,8 @@ export const TambahUser = () => {
 
   return (
     <div className="container-fluid">
+        <div className="row m-3 p-1 rounded bg-dark">  
+            <h1 className="text-white text-center">Update Arsip</h1></div>
       <div className="row bg-white m-3 rounded p-4 ">
         <h3 className='mb-3'>Tambah User</h3>
         <ul>

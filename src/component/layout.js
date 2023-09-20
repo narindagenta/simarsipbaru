@@ -11,9 +11,6 @@ function Layout() {
     <Bar />
   </div>
 </div>
-
-
-
         <div className="col-md-10 col-10">
           <Header />
           <Outlet />

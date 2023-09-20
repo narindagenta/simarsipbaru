@@ -27,6 +27,9 @@ export const User = () => {
     const handleHapus = () => {
 
     }
+    const handleEdit = () =>{
+      navigate('/updateuser')
+    }
 
     useEffect(()=>{
         document.getElementById('user').classList.add('act')
@@ -41,8 +44,8 @@ export const User = () => {
             <div className="row justify-content-center align-items-center m-2">
               <div className='bg-white m-2 rounded p-3 col-12 col-md-12 '>
                 <div className="d-flex justify-content-between align-items-center">
-                  <h3 className="m-0">Manajemen User</h3>
-                  <button className="btn btn-success d-flex align-items-center">
+                  <h1 className="m-0">Manajemen User</h1>
+                  <button className="btn btn-success d-flex align-items-center" onClick={handleTambah}>
                     <BsPlusSquare className="m-2" />
                     <span className="d-none d-md-inline">Tambah User</span>
                   </button>
@@ -70,7 +73,7 @@ export const User = () => {
                           <td>Admin</td>
                           <td>disinfolahtaau</td>
                           <td >
-                            <FaEdit className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Edit User"  />
+                            <FaEdit className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Edit User" onClick={handleEdit} />
                             <MdOutlineDeleteOutline className='ms-2' data-toggle="tooltip" data-placement="bottom" title="Delete User" onClick={handleHapusClick} />
                             {showModal && (
                                 <div className="modal d-block" tabIndex="-1" role="dialog" >
