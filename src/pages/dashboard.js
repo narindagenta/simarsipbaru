@@ -77,6 +77,6 @@ export const Dashboard = () => {
         </div>
         <Tabel className="col-12 "/>
       </div>
-    </div>
+    // </div>
   );
 };

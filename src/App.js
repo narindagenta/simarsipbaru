@@ -13,6 +13,7 @@ import { TambahUser } from './pages/tambahuser';
 import { useEffect } from 'react';
 import { Update } from './pages/updatearsip';
 import { UpdateUser } from './pages/updateuser';
+import { Profile } from './pages/profile';
 
 // import { useNavigate } from 'react-router-dom';
 // import { useEffect } from 'react';

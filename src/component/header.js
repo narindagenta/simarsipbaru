@@ -1,6 +1,5 @@
 import React from 'react';
 import { ImSearch } from 'react-icons/im';
-import { CgProfile } from 'react-icons/cg';
 import {IoChevronBackCircleSharp} from 'react-icons/io5';
 
 import Icon from '../images/logopolos.png';
