@@ -42,13 +42,25 @@ export const Detail = () =>{
                         </div>
                     </li>
                     <li className="mb-3 row">
+                        <label for="catalog" class="col-sm-2 col-form-label">No Buku</label>
+                        <div class="col-sm-9 m-2">
+                            <span className="catalog">: 234</span>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
+                        <label for="catalog" class="col-sm-2 col-form-label">No Naskah</label>
+                        <div class="col-sm-9 m-2">
+                            <span className="catalog">: B/01/12/2023</span>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
                         <label for="tittle" class="col-sm-2 col-form-label">Judul</label>
                         <div class="col-sm-9 m-2">
                             <span className="tittle">:  Ini Judul</span>
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Surat</label>
+                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Terbit</label>
                         <div class="col-sm-9 m-2">
                             <span className="Release_date">:  12 Agustus 2023</span>
                         </div>

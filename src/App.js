@@ -43,7 +43,7 @@ function App() {
           </Route>
           <Route path='/tabel' element={<Layout/>}>
             <Route index element={<Tabel/>} />
-            <Route path='/tabel/detail' element={<Detail/>}/>
+            <Route path='/tabel/detail/' element={<Detail/>}/>
           </Route>
           <Route path='/updatearsip' element={<Layout/>}>
             <Route index element={<Update/>} />

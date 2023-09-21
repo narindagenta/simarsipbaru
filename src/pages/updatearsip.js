@@ -12,6 +12,7 @@ export const Update = () => {
   const [catalogValue, setCatalogValue] = useState("");
   const [serialNumberValue, setSerialNumberValue] = useState("");
   const newplugin = defaultLayoutPlugin();
+  const [selectedFile, setSelectedFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const handleModalOpen = () => {
@@ -38,10 +39,10 @@ export const Update = () => {
     }
   };
 
-  useEffect(() => {
-    document.getElementById("tambah").classList.add("act");
-    document.getElementById("tambah").classList.remove("text-white");
-  }, []);
+  // useEffect(() => {
+  //   document.getElementById("tambah").classList.add("act");
+  //   document.getElementById("tambah").classList.remove("text-white");
+  // }, []);
 
   useEffect(() => {
     generateArchiveCode();
@@ -327,7 +328,7 @@ export const Update = () => {
                                         <div className="modal-body text-center">
                                             {/* Add your modal content here */}
                                             <FiCheckCircle className="fs-1 text-success "/>
-                                            <h5 className="p-2 m-2">Arsip Berhasil Ditambahkan</h5>
+                                            <h5 className="p-2 m-2">Arsip Berhasil Di Update</h5>
                                         </div>
                                         
                                     </div>

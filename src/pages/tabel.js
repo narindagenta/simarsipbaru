@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import {TiArrowSortedDown} from 'react-icons/ti';
 
 export const Tabel = () => {
   const navigate = useNavigate()
@@ -9,8 +10,17 @@ export const Tabel = () => {
     return(
         <div className="container-fluid">
             <div className="row bg-white m-3 rounded p-3 ">
-                <h1 className='p-2'>Arsip</h1>
-                <div className='table-responsive'>
+              <div className="d-flex justify-content-between align-items-center">
+                <h1 className="m-0">Arsip</h1>
+                <button
+                  className="btn btn-dark d-flex align-items-center"
+                  // onClick={handleTambah}
+                  >
+                  <TiArrowSortedDown className="m-2" />
+                  <span className="d-none d-md-inline">Urutkan</span>
+                </button>
+              </div>
+                <div className='table-responsive mt-3'>
                 <table class="table table-hover text-center">
                     <thead>
                         <tr>
