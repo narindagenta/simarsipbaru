@@ -1,16 +1,32 @@
 import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin, DefaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import '@react-pdf-viewer/core/lib/styles/index.css'
-import '@react-pdf-viewer/default-layout/lib/styles/index.css'
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import {BsPlusSquare} from 'react-icons/bs';
+import { useNavigate } from "react-router-dom";
 
 
 export const Detail = () =>{
+    const navigate = useNavigate();
+
+
+    const handleupdate = () =>{
+
+        navigate('/updatearsip')
+    }
     
     return(
         <div className="container-fluid">
             <div className="row bg-white m-3 rounded p-3">
-                <h1 className="p-2">Detail Arsip</h1>
-                <div className="row mt-2">
+                <div className="d-flex justify-content-between align-items-center p-2">
+                  <h1 className="m-0 ">Detail Arsip</h1>
+                  <button className="btn btn-success d-flex align-items-center" onClick={handleupdate} >
+                    <BsPlusSquare className="m-2" />
+                    <span className="d-none d-md-inline">Update Arsip</span>
+                  </button>
+
+                </div>
+                <div className="row mt-3">
                     <h4 className="bg-dark text-white p-2 ps-4 rounded">Identitas Arsip</h4>
                     <ul>
                     <li className="mb-3 row">
@@ -26,13 +42,25 @@ export const Detail = () =>{
                         </div>
                     </li>
                     <li className="mb-3 row">
+                        <label for="catalog" class="col-sm-2 col-form-label">No Buku</label>
+                        <div class="col-sm-9 m-2">
+                            <span className="catalog">: 234</span>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
+                        <label for="catalog" class="col-sm-2 col-form-label">No Naskah</label>
+                        <div class="col-sm-9 m-2">
+                            <span className="catalog">: B/01/12/2023</span>
+                        </div>
+                    </li>
+                    <li className="mb-3 row">
                         <label for="tittle" class="col-sm-2 col-form-label">Judul</label>
                         <div class="col-sm-9 m-2">
                             <span className="tittle">:  Ini Judul</span>
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Surat</label>
+                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Terbit</label>
                         <div class="col-sm-9 m-2">
                             <span className="Release_date">:  12 Agustus 2023</span>
                         </div>

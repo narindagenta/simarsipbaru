@@ -7,11 +7,12 @@ import { useEffect, useState } from "react";
 import Icon from '../images/logopolos.png';
 import {FiCheckCircle} from "react-icons/fi"
 
-export const Tambah = () => {
+export const Update = () => {
   const [viewPdf, setViewPdf] = useState(null);
   const [catalogValue, setCatalogValue] = useState("");
   const [serialNumberValue, setSerialNumberValue] = useState("");
   const newplugin = defaultLayoutPlugin();
+  const [selectedFile, setSelectedFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const handleModalOpen = () => {
@@ -38,10 +39,10 @@ export const Tambah = () => {
     }
   };
 
-  useEffect(() => {
-    document.getElementById("tambah").classList.add("act");
-    document.getElementById("tambah").classList.remove("text-white");
-  }, []);
+  // useEffect(() => {
+  //   document.getElementById("tambah").classList.add("act");
+  //   document.getElementById("tambah").classList.remove("text-white");
+  // }, []);
 
   useEffect(() => {
     generateArchiveCode();
@@ -62,7 +63,10 @@ export const Tambah = () => {
 
     return(
         <div className="container-fluid">
+            <div className="row m-3 p-1 rounded bg-dark">  
+            <h1 className="text-white text-center">Update Arsip</h1></div>
             <div className="row bg-white m-3 rounded p-3 ">
+                
                 <h3>A. Identitas</h3>
                 <form className="">
                     <ul>
@@ -135,7 +139,7 @@ export const Tambah = () => {
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Terbit</label>
+                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Surat</label>
                         <div class="col-sm-3">
                             <input type="date" className="form-control" id="Release_date" placeholder="masukkan judul"/>
                         </div>
@@ -318,13 +322,13 @@ export const Tambah = () => {
                                         <div className='col'>
                                           <h4 className="modal-title">Sim Arsip</h4>
                                         </div>
-                                      </div><button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleModalClose}></button>
-                                      
+                                      </div>
+                                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleModalClose}></button>
                                     </div>
                                         <div className="modal-body text-center">
                                             {/* Add your modal content here */}
                                             <FiCheckCircle className="fs-1 text-success "/>
-                                            <h5 className="p-2 m-2">Arsip Berhasil Ditambahkan</h5>
+                                            <h5 className="p-2 m-2">Arsip Berhasil Di Update</h5>
                                         </div>
                                         
                                     </div>
