@@ -3,8 +3,15 @@ import Icon from '../images/logopolos.png';
 // import {RxLayers, RxDashboard} from "react-icons/rx";
 // import {ImSearch} from "react-icons/im";
 import {CgProfile} from 'react-icons/cg'
+import { useNavigate } from 'react-router-dom';
+
 
 export const Header = () => {
+    const navigate = useNavigate();
+
+    const handleProfile = () => {
+        navigate('/profile');
+      };  
 
 
     return(
@@ -21,7 +28,7 @@ export const Header = () => {
                 <div className='row bg-dark d-flex flex-column justify-content-end align-items-end'>
                     <div class="d-flex col-2 col-md-3 bg-white rounded-pill justify-content-center m-2 me-5">
                         <a href='/profile' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account" className='p-2 d-flex justify-content-center align-items-center text-dark'>
-                            <CgProfile className="prof"/><span className='ms-1 d-none d-md-block' id='username'>DISINFOLAHTAAU</span>
+                            <CgProfile className="prof"/><span className='ms-1 d-none d-md-block' onClick={handleProfile} id='username'>DISINFOLAHTAAU</span>
                         </a>
                     </div>
                 </div>

@@ -10,6 +10,8 @@ import Layout from './component/layout';
 import { Category } from './pages/category';
 import { Detail } from './pages/detailarsip';
 import { TambahUser } from './pages/tambahuser';
+import { Update } from './pages/update';
+import { Profile } from './pages/profile';
 
 
 function App() {
@@ -34,6 +36,13 @@ function App() {
           <Route path='/category' element={<Layout/>}>
             <Route index element={<Category/>} />
           </Route>
+          <Route path='/update' element={<Layout/>}>
+            <Route index element={<Update/>} />
+          </Route>
+          <Route path='/profile' element={<Layout/>}>
+            <Route index element={<Profile/>} />
+          </Route>
+
         </Routes>
       </BrowserRouter>
   );

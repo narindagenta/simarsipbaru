@@ -283,18 +283,18 @@ export const Tambah = () => {
                             <input onChange={handleChangePdf} type="file" className="form-control" id="scan" placeholder="Pilih File" accept=".pdf"/>
                         </div>
                     </li>
-                    <li className="mb-3 row justify-content-center align-items-center">
-                    <div className='pdf-view d-none col-sm-9 ' id='pdf-viewer'>
-                                <Worker workerUrl='https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js'>
-                                    {viewPdf && <>
-                                        <div className="view">
-                                        <Viewer fileUrl={viewPdf} plugins={[newplugin]} />
-                                        </div>
-                                    </>
-                                    }
-                                    {!viewPdf && <></>}
-                                </Worker>
-                            </div>
+                    <li className="mb-3 row justify-content-center align-items-right">
+                      <div className='pdf-view d-none col-sm-9 ' id='pdf-viewer' style={{ paddingLeft: '50px' }}>
+                          <Worker workerUrl='https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js'>
+                              {viewPdf && <>
+                                  <div className="view">
+                                  <Viewer fileUrl={viewPdf} plugins={[newplugin]} />
+                                  </div>
+                              </>
+                              }
+                              {!viewPdf && <></>}
+                          </Worker>
+                      </div>
                     </li>
                     </ul>
                 </form>
