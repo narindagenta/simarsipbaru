@@ -163,6 +163,15 @@ export const User = () => {
             </div>
             <div className="row m-0">
               <ul className="">
+              <li className="row justify-content-between align-items-center">
+                <HiUserCircle className="fs-1 m-2 col-md-12"/>
+                  {/* <label for="code" className=" col-form-label">
+                    Username
+                  </label> */}
+                  <div className="col-md-12 text-center border border-dark rounded">
+                    <span className="fs-4 m-1"> Anjani</span>
+                  </div>
+                </li>
                 <li className="row justify-content-between align-items-center">
                   <label for="code" className="col-md-5 col-form-label">
                     ID
@@ -171,14 +180,7 @@ export const User = () => {
                     <span className="">: 1</span>
                   </div>
                 </li>
-                <li className="row justify-content-between align-items-center">
-                  <label for="code" className="col-md-5 col-form-label">
-                    Username
-                  </label>
-                  <div className="col-md-7">
-                    <span className="">: Anjani</span>
-                  </div>
-                </li>
+                
                 <li className="row justify-content-between align-items-center">
                   <label for="code" className="col-md-5 col-form-label">
                     Role

@@ -229,7 +229,7 @@ export const UpdateUser = () => {
                                         <div className="modal-body text-center">
                                             {/* Add your modal content here */}
                                             <FiCheckCircle className="fs-1 text-success "/>
-                                            <h5 className="p-2 m-2">User Baru Berhasil Ditambahkan</h5>
+                                            <h5 className="p-2 m-2">Berhasil Mengupdate User</h5>
                                         </div>
                                         
                                     </div>

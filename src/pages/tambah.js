@@ -135,7 +135,7 @@ export const Tambah = () => {
                         </div>
                     </li>
                     <li className="mb-3 row">
-                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Surat</label>
+                        <label for="Release_date" class="col-sm-2 col-form-label">Tanggal Terbit</label>
                         <div class="col-sm-3">
                             <input type="date" className="form-control" id="Release_date" placeholder="masukkan judul"/>
                         </div>
@@ -318,8 +318,8 @@ export const Tambah = () => {
                                         <div className='col'>
                                           <h4 className="modal-title">Sim Arsip</h4>
                                         </div>
-                                      </div>
-                                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleModalClose}></button>
+                                      </div><button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleModalClose}></button>
+                                      
                                     </div>
                                         <div className="modal-body text-center">
                                             {/* Add your modal content here */}
