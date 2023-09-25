@@ -4,6 +4,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import {BsPlusSquare} from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
+import {BiSolidDownload} from "react-icons/bi"
 
 
 export const Detail = () =>{
@@ -20,11 +21,16 @@ export const Detail = () =>{
             <div className="row bg-white m-3 rounded p-3">
                 <div className="d-flex justify-content-between align-items-center p-2">
                   <h1 className="m-0 ">Detail Arsip</h1>
-                  <button className="btn btn-success d-flex align-items-center" onClick={handleupdate} >
+                  <div className="d-flex p-2">
+                  <button className="btn btn-success d-flex align-items-center me-2 " onClick={handleupdate} >
+                    <BiSolidDownload className="m-2" />
+                    <span className="d-none d-md-inline">Download</span>
+                  </button>
+                  <button className="btn btn-secondary d-flex align-items-center" onClick={handleupdate} >
                     <BsPlusSquare className="m-2" />
                     <span className="d-none d-md-inline">Update Arsip</span>
                   </button>
-
+                    </div>
                 </div>
                 <div className="row mt-3">
                     <h4 className="bg-dark text-white p-2 ps-4 rounded">Identitas Arsip</h4>

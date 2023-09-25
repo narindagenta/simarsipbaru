@@ -3,9 +3,15 @@ import {TiArrowSortedDown} from 'react-icons/ti';
 
 export const Tabel = () => {
   const navigate = useNavigate()
+export const Tabel = ({ data, searchTerm }) => {
+  const navigate = useNavigate();
+
   function handleDetail() {
     navigate('/tabel/detail')
   }
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
     return(
         <div className="container-fluid">
