@@ -1,14 +1,21 @@
 import { ImSearch } from 'react-icons/im';
-// import { Tabel } from '../pages/tabel';
+import { Tabel } from '../pages/tabel';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const SearchTable = ({ onSearch }) => {
-    const [searchQuery, setSearchQuery] = useState('');
+export const SearchTable = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
   
     const handleSearch = (e) => {
-      const query = e.target.value;
-      setSearchQuery(query);
-      onSearch(query); // Panggil fungsi onSearch dan teruskan nilai pencarian
+      navigate('/tabel')
+      console.log(searchTerm)
+      return(
+        <Tabel searchTerm={searchTerm} className="d-none d-md-none"/>
+      )
+      
+      
+      // onSearch(query); // Panggil fungsi onSearch dan teruskan nilai pencarian
     }
     
     return(
@@ -18,13 +25,12 @@ export const SearchTable = ({ onSearch }) => {
                   type="text"
                   placeholder="Cari Arsip"
                   className="form-control"
-                  value={searchQuery}
-                  onChange={handleSearch}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <span className="input-group-text">
-                  <ImSearch />
-                </span>
-                {/* <Tabel searchQuery={searchQuery}/> */}
+                  <ImSearch onClick={handleSearch} />
+                </span> 
         </div>
     )
 }

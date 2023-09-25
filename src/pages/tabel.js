@@ -2,25 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 
-export const Tabel = ({ data }) => {
+export const Tabel = ({ data, searchTerm }) => {
   const navigate = useNavigate();
-  // const [searchQuery, setSearchQuery] = useState("");
-  // const [filteredData, setFilteredData] = useState(data);
-
-  // useEffect(() => {
-  //   // Filter data berdasarkan pencarian
-  //   const filtered = data.filter((item) =>
-  //     item.name.toLowerCase().includes(searchQuery.toLowerCase())
-  //   );
-  //   setFilteredData(filtered);
-  // }, [data, searchQuery]);
 
   function handleDetail() {
     navigate("/tabel/detail");
   }
-  /*const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchQuery.toLowerCase())
-  )*/
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   return (
     <div className="container-fluid">
