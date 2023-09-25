@@ -38,7 +38,6 @@ export const Update = () => {
       setViewPdf(null);
     }
   };
- 
 
   // useEffect(() => {
   //   document.getElementById("tambah").classList.add("act");
@@ -58,12 +57,6 @@ export const Update = () => {
       console.log("Archive Code:", archiveCode);
    
     }
-  }
-   // const updatearsip = () => {
-    
-  // }
-  const hanleInputchange = () => {
-    
   }
   
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ImSearch } from 'react-icons/im';
 import {IoChevronBackCircleSharp} from 'react-icons/io5';
-import { SearchTable } from './search';
 
 import Icon from '../images/logopolos.png';
 // import {RxLayers, RxDashboard} from "react-icons/rx";
@@ -19,7 +18,6 @@ export const Header = () => {
       window.history.back();
       
     }
-
   }
   return (
     <header className="">
@@ -56,19 +54,17 @@ export const Header = () => {
                 </div>
             </div>
             <div className="col-8 col-md-4 pe-3 d-flex align-items-center justify-content-end p-2">
-              <SearchTable/>
-              {/* <div className="input-group">
+              <div className="input-group">
                 <input
                   id="search"
                   type="text"
                   placeholder="Cari Arsip"
                   className="form-control"
-                  onInput={handleSearch}
                 />
                 <span className="input-group-text">
                   <ImSearch />
                 </span>
-                </div> */}
+              </div>
             </div>
           </div>
         </div>
