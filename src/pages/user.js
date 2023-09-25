@@ -15,13 +15,15 @@ export const User = () => {
   const handleTambah = async (event) => {
     navigate("/user/tambahuser");
   };
-  const handleHapusClick = () => {
+  const handleHapusClick = (event) => {
     // Show the modal when the edit icon is clicked
     setShowModal(true);
+    event.stopPropagation();
   };
-  const handleModalClose = () => {
+  const handleModalClose = (event) => {
     // Close the modal when needed
     setShowModal(false);
+    event.stopPropagation();
   };
   const handleHapus = () => {};
   const handleEdit = () => {
@@ -36,6 +38,7 @@ export const User = () => {
   const handleTutupDetail = () => {
     document.getElementById("detail").classList.add("d-none");
     document.getElementById("table").classList.remove("col-md-9");
+    
   };
 
   useEffect(() => {
@@ -45,7 +48,7 @@ export const User = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row justify-content-center align-items-center m-2">
+      <div className="row justify-content-center align-items-center m-1 mt-4">
         <div id="table" className="bg-white rounded p-3 col-12">
           <div className="d-flex justify-content-between align-items-center">
             <h1 className="m-0">Manajemen User</h1>
@@ -152,7 +155,7 @@ export const User = () => {
           id="detail"
           className="d-none col-12 col-md-3 p-2 justify-content-end"
         >
-          <div className="row bg-white m-2 rounded p-3 justify-content-between align-items-center d-flex">
+          <div className="row bg-white ms-1 rounded p-2 justify-content-between align-items-center d-flex">
             <div className="row justify-content-start">
               <button
                 type="button"
@@ -168,32 +171,32 @@ export const User = () => {
                   {/* <label for="code" className=" col-form-label">
                     Username
                   </label> */}
-                  <div className="col-md-12 text-center border border-dark rounded">
+                  <div className="col-md-12 col-12 text-center border border-dark rounded">
                     <span className="fs-4 m-1"> Anjani</span>
                   </div>
                 </li>
                 <li className="row justify-content-between align-items-center">
-                  <label for="code" className="col-md-5 col-form-label">
+                  <label for="code" className="col-md-5 col-5 col-form-label">
                     ID
                   </label>
-                  <div className="col-md-7">
+                  <div className="col-md-7 col-7">
                     <span className="">: 1</span>
                   </div>
                 </li>
                 
                 <li className="row justify-content-between align-items-center">
-                  <label for="code" className="col-md-5 col-form-label">
+                  <label for="code" className="col-md-5 col-5 col-form-label">
                     Role
                   </label>
-                  <div className="col-md-7">
+                  <div className="col-md-7 col-7">
                     <span className="">: Admin</span>
                   </div>
                 </li>
                 <li className="row justify-content-between align-items-center">
-                  <label for="code" className="col-md-5 col-form-label">
+                  <label for="code" className="col-md-5 col-5 col-form-label">
                     Satker
                   </label>
-                  <div className="col-md-7">
+                  <div className="col-md-7 col-7">
                     <span className="">: Disinfolahta</span>
                   </div>
                 </li>

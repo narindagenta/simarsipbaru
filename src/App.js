@@ -13,6 +13,7 @@ import { TambahUser } from './pages/tambahuser';
 import { useEffect } from 'react';
 import { Update } from './pages/updatearsip';
 import { UpdateUser } from './pages/updateuser';
+import { Profile } from './pages/profile';
 
 // import { useNavigate } from 'react-router-dom';
 // import { useEffect } from 'react';
@@ -58,6 +59,9 @@ function App() {
           </Route>
           <Route path='/category' element={<Layout/>}>
             <Route index element={<Category/>} />
+          </Route>
+          <Route path='/profile' element={<Layout/>}>
+            <Route index element={<Profile/>} />
           </Route>
         </Routes>
       </BrowserRouter>
